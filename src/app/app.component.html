@@ -1,0 +1,9 @@
+<app-my-cool #cool [text]="text_prop" (displayTextChanged)="child.setText(text_prop)"></app-my-cool>
+<input type="text" [(ngModel)]="text_prop"/>
+<h4>On text changed: {{changed_text}}</h4>
+<button (click)="hello()">Click to confirm</button>
+<h4 *ngIf="say_hello">Hello</h4>
+<app-child-component #child [ngClass]="{'highlight': say_hello}" [style.color]=" say_hello? 'red': 'black'"></app-child-component>
+<app-child-component></app-child-component>
+<app-child-component></app-child-component>
+<app-child-component></app-child-component>
